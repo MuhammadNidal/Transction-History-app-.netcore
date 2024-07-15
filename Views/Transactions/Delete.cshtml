@@ -1,0 +1,42 @@
+﻿@model jqueryAjaxCrud.Models.TransactionModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title">Delete Your Transaction Record</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Are you sure you want to delete this?</h4>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-4">Account Number:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.AccountNumber)</dd>
+                        <dt class="col-sm-4">Beneficiary Name:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.BeneficiaryName)</dd>
+                        <dt class="col-sm-4">Bank Name:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.BankName)</dd>
+                        <dt class="col-sm-4">SWIFT Code:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.SWIFTCode)</dd>
+                        <dt class="col-sm-4">Amount:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Amount)</dd>
+                        <dt class="col-sm-4">Date:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Date)</dd>
+                    </dl>
+                </div>
+                <div class="card-footer text-center">
+                    <form asp-action="Delete" method="post" id="deleteForm">
+                        <input type="hidden" asp-for="TransactionId" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
